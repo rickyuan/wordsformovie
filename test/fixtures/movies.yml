@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  released: 2011-12-03
+  poster_file_name: MyString
+  poster_content_type: MyString
+  poster_file_size: 1
+  poster_updated_at: 2011-12-03 17:48:06
+
+two:
+  name: MyString
+  released: 2011-12-03
+  poster_file_name: MyString
+  poster_content_type: MyString
+  poster_file_size: 1
+  poster_updated_at: 2011-12-03 17:48:06

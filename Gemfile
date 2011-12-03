@@ -10,6 +10,8 @@ gem 'sqlite3'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 
+gem 'paperclip', '~> 2.4'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
