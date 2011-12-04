@@ -1,21 +1,13 @@
 Wordsformovie::Application.routes.draw do
-  get "movies/index"
+  
+  root :to => 'movies#index'
+  
+  match '/auth/:provider/callback', :to => 'sessions#create'
+  match '/auth/failure', :to => 'sessions#failure'
+  
+  match '/show', :to => 'movies#show'
+  match '/signout', :to => 'sessions#destroy'
 
-  get "movies/show"
-
-  get "movies/new"
-
-  get "movies/create"
-
-  get "movies/edit"
-
-  get "movies/update"
-
-  get "movies/destroy"
-
-  get "sessions/create"
-
-  get "sessions/failure"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

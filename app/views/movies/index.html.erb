@@ -1,2 +1,8 @@
-<h1>Movies#index</h1>
-<p>Find me in app/views/movies/index.html.erb</p>
+<div id="container" class="shadow">
+<h1>Words For Movie</h1>
+<p>Just one word can make you love movie. Spread the word for the movie you like, and get the word that can make you love the movie.</p>
+<%= link_to "Sign in with Twitter!", 'auth/twitter' %>
+<%= link_to "Sign in with Facebook!", 'auth/facebook' %>
+<p><%= flash[:notice] %></p>
+<p><%= flash[:failure] %></p>
+</div>
