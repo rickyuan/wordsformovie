@@ -4,13 +4,13 @@ class SessionsController < ApplicationController
     
     @authorization = Authorization.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"])
     if @authorization
-      redirect_to show_path, :controller => :movies, :flash => { :notice => "Welcome back, #{@authorization.user.name}!" }
+      redirect_to index_path, :controller => :movies, :flash => { :notice => "Welcome back, #{@authorization.user.name}!" }
     else
       user = User.new :name => auth_hash["info"]["name"], :email => auth_hash["info"]["email"]
       user.authorizations.build :provider => auth_hash["provider"], :uid => auth_hash["uid"], :uname => auth_hash["info"]["name"]
       user.save
       
-      redirect_to show_path, :controller => :movies, :flash => { :notice => "Hi #{user.name}! You're signed up." }
+      redirect_to index_path, :controller => :movies, :flash => { :notice => "Hi #{user.name}! You're signed up." }
     end
   end
   

@@ -1,8 +1,7 @@
 <header>
-	<%= link_to "Word For Movie", show_path, :controller => :movies, :class => "logo" %>
+	<%= link_to "Words For Movie", index_path, :controller => :movies, :class => "logo" %>
 	<nav>
 		<ul>
-			<li><%= "{@user.name}" %></li>
 			<li><%= link_to "Sign out", signout_path, :controller => :sessions %></li>
 			<li><%= link_to "New movie", new_path, :controller => :movies %></li>
 		</ul>

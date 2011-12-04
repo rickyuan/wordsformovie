@@ -1,10 +1,12 @@
 Wordsformovie::Application.routes.draw do
+  resources :movies
   
-  root :to => 'movies#index'
+  root :to => 'sessions#index'
   
   match '/auth/:provider/callback', :to => 'sessions#create'
   match '/auth/failure', :to => 'sessions#failure'
   
+  match '/index', :to => 'movies#index'
   match '/show', :to => 'movies#show'
   match '/signout', :to => 'sessions#destroy'
   match '/new', :to => 'movies#new'
