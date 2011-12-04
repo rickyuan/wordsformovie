@@ -7,6 +7,7 @@ Wordsformovie::Application.routes.draw do
   
   match '/show', :to => 'movies#show'
   match '/signout', :to => 'sessions#destroy'
+  match '/new', :to => 'movies#new'
 
 
   # The priority is based upon order of creation:
