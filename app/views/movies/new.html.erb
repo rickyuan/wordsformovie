@@ -1,25 +1,23 @@
 <%= render 'layouts/header' %>
-<div id="wrap">
-	<div id ="welcome-or-notice">
+<div id="section">
+	<div class="notification">
 		<%= flash[:notice] %>
 	</div>
-	<div id="section">
-		<h1>Create a new movie content</h1>
-		<%= form_for @movie, :url => { :action => "create" }, :html => { :multipart => true } do |f| %>
-		<div class="field">
-			<%= f.label :name %><br \>
-			<%= f.text_field :name %>
-		</div>
-		<div class="field">
-			<%= f.label :released %><br \>
-			<%= f.text_field :released %>
-		</div>
-		<div class="field">
-			<%= f.file_field :poster %>
-		</div>
-		<div class="actions">
-			<%= f.submit "Create" %>
-		</div>
-		<% end %>
-	</div>
+<h1>Create a new movie content</h1>
+<%= form_for @movie, :url => { :action => "create" }, :html => { :multipart => true } do |f| %>
+<div class="field">
+	<%= f.label :name %><br \>
+	<%= f.text_field :name %>
+</div>
+<div class="field">
+	<%= f.label :released %><br \>
+	<%= f.text_field :released %>
+</div>
+<div class="field">
+	<%= f.file_field :poster %>
+</div>
+<div class="actions">
+	<%= f.submit "Create" %>
+</div>
+<% end %>
 </div>

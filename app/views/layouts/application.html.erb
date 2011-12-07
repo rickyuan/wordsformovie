@@ -3,14 +3,17 @@
 <head>
   <title>Wordsformovie</title>
   <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag 'screen', :media => 'screen' %>
   <%= stylesheet_link_tag 'custom', :media => 'screen' %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class="container">
+	<%= render 'layouts/header' %>
 
-
-<%= yield %>
+	<%= yield %>
+	</div>
 
 
 </body>

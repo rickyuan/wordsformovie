@@ -1,16 +1,18 @@
 class SessionsController < ApplicationController
+  before_filter :current_user
   def create
     auth_hash = request.env["omniauth.auth"]
     
-    @authorization = Authorization.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"])
-    if @authorization
-      redirect_to index_path, :controller => :movies, :flash => { :notice => "Welcome back, #{@authorization.user.name}!" }
-    else
-      user = User.new :name => auth_hash["info"]["name"], :email => auth_hash["info"]["email"]
-      user.authorizations.build :provider => auth_hash["provider"], :uid => auth_hash["uid"], :uname => auth_hash["info"]["name"]
-      user.save
+    if session[:user_id]
+      User.find(session[:user_id]).add_provider(auth_hash)
       
-      redirect_to index_path, :controller => :movies, :flash => { :notice => "Hi #{user.name}! You're signed up." }
+      redirect_to index_path, :controller => :movies, :flash => { :notice => "You can now login using #{auth_hash["provider"].capitalize} too!"}
+    else
+      auth = Authorization.find_or_create(auth_hash)
+      session[:user_id] = auth.user.id
+      redirect_to index_path, :controller => :movies, :flash => { :notice => "Welcome, #{auth.user.name}!"}
+      
+      
     end
   end
   

@@ -1,9 +1,16 @@
-<header>
-	<%= link_to "Words For Movie", index_path, :controller => :movies, :class => "logo" %>
-	<nav>
-		<ul>
-			<li><%= link_to "Sign out", signout_path, :controller => :sessions %></li>
-			<li><%= link_to "New movie", new_path, :controller => :movies %></li>
-		</ul>
-	</nav>
-</header>
+<div id="header">
+	<div class="logo">
+		<%= link_to "Watch and Talk", index_path, :controller => :movies %>
+	</div>
+	<div>
+		<p>Talk the shows you are watching, with friends or make friends.</p>
+	</div>
+</div>
+<div id="sub-header">
+	<p class="hide"><%= flash[:notice] %></p>
+	<% if user_signed_in? %>
+	<p><%= render :text => "Welcome, #{current_user.name}!" %> <%= link_to "Sign out!", signout_path, :controller => :sessions %> <%= link_to "Create new Show", new_path, :controller => :movies %></p>
+	<% else %>
+	<p><%= link_to "Sign in with Twitter!", "auth/twitter" %> <%= link_to "Sign in with Facebook!", "auth/facebook" %></p>
+	<% end %>
+</div>

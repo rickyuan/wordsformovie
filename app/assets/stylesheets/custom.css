@@ -1,88 +1,45 @@
-body {
-	background: #e9e9e9;
-	margin: 0;
-	padding: 0;
-	color: #444;
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+#header {
+width: 100%;
+margin-top: 20px;
 }
 
-#container {
-	width: 540px;
-	height: 240px;
-	margin: 120px auto;
-	background: #f0f0f0;
-	padding: 20px;
+#header .logo {
+font-size: 140%;
+font-weight: bold;
 }
 
-.shadow {
-	-moz-box-shadow: inset 0 0 8px 8px #fff;
-	-webkit-box-shadow: inset 0 0 8px 8px #fff;
-	box-shadow: inset 0 0 8px 8px #fff;
+#sub-header {
+width: 100%;
 }
 
-header {
-	height: 36px;
-	background: #444;
-	border-bottom: solid 2px #999;
-	padding: 2px;
-}
-
-header .logo {
-	font-size: 140%;
-	color: #f0f0f0;
-	margin-left: 6px;
-}
-
-header a {
-	text-decoration: none;
-}
-
-nav {
-	float: right;
-	padding: 0 0.7em;
-}
-
-nav ul {
-	margin: 0;
-	padding: 0;
-}
-
-nav ul li {
-	list-style-type: none;
-	display: inline-block;
-	padding: 0.2em 0;
-}
-
-nav ul li a {
-	padding: 0 5px;
-	font-weight: bold;
-	color: #09c;
-	text-decoration: none;
-}
-
-#wrap {
-	width: 980px;
-	margin: 0 auto;
-	overflow: hidden;
-	background: #f0f0f0;
-}
-
-#welcome-or-notice {
-	color: #666;
-	height: 24px;
-	width: 640px;
-	margin: 5px 10px 5px 15px;
-	text-shadow: 0 1px #fff;
-}
-
-#section {
-	width: 100%;
-	overflow: hidden;
-	margin: 0;
-	padding: 0;
-}
 
 #content {
-	
+margin-top: 20px;
+width:100%
 }
 
+#content .mname {
+font-weight: bold;
+margin-right: 2px;
+}
+
+#content .time {
+font-size: 90%;
+margin-left: 6px;
+color:#666;
+}
+
+.btn {
+float:none;
+margin-bottom: 34px;
+}
+
+.span-15 li {
+border-bottom: 1px dashed #ddd;
+margin-bottom: 0.5em;
+padding-bottom: 0.2em;
+}
+
+.span-8 li {
+margin-bottom: 0.5em
+}

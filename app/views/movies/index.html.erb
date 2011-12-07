@@ -1,13 +1,18 @@
-<%= render 'layouts/header' %>
-<div id="wrap">
-	<div id ="welcome-or-notice">
-		<%= flash[:notice] %>
+<div id="content">
+	<div class="span-15">
+		<h3>New talks</h3>
+		<ul>
+			<% if user_signed_in? %>
+			<li><p><span class="mname"><%= link_to movie.name, show_path, :controller => :movies %>:</span>This is really a great movie!<span class ="time"><%= link_to current_user.name, show_path, :controller => :users, :class => "quiet" %> 2 hours ago.</span></p></li>
+			<% end %>
+		</ul>
 	</div>
-	<div id="section">
-		<% @movies.each do |movie| %>
-		<%= image_tag movie.poster.url(:large) %>
-		<%= movie.name %>
-		<%= movie.released %>
-		<% end %>
-	</div>
+    <div class="span-8 right">
+		<h3>All topics</h3>
+		<ul>
+			<% @movies.each do |movie| %>
+			<li><p><%= movie.name %> <%= movie.released %></p></li>
+        	<% end %>
+        </ul>
+     </div>
 </div>
